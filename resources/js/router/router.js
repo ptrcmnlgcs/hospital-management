@@ -1,13 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import RegisterPage from '../views/patient/RegisterPage.vue';
 import LoginPage from '../views/LoginPage.vue';
-import Dashboard from '../views/DashboardPage.vue';
+import Dashboard from '../components/DashboardPage.vue';
+import DoctorPage from '../views/DoctorPage.vue'; // Import DoctorPage
+
 import store from '../vuex/store';
 
 const routes = [
     { path: '/', name: 'registerPatient', component: RegisterPage },
     { path: '/login', name: 'loginPage', component: LoginPage },
-    { path: '/dashboard', name: 'dashboardPage', component: Dashboard, meta: { requiresAuth: true } }
+    { path: '/dashboard', name: 'dashboardPage', component: Dashboard, meta: { requiresAuth: true } },
+    { path: '/doctor', name: 'doctorPage', component: DoctorPage, meta: { requiresAuth: true } } // Add DoctorPage route
 ];
 
 const router = createRouter({
