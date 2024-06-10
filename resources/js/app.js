@@ -3,6 +3,7 @@ import axiosInstance from './axios.js';
 import router from './router/router.js';
 import store from './vuex/store.js';
 import Navbar from './components/NavBar.vue';
+import SidePanel from './components/SidePanel.vue';
 import Toast, { useToast } from 'vue-toastification';
 import 'vue-toastification/dist/index.css';
 import Swal from 'sweetalert2';
@@ -28,4 +29,5 @@ app.use(Toast, {
     .use(router)
     .use(store)
     .component('Navbar', Navbar)
+    .component('SidePanel', SidePanel)
     .mount("#app");
