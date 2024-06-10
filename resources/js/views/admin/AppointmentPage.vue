@@ -17,7 +17,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="appointment in appointments" :key="appointment.id" class="hover:bg-gray-100">
+            <tr class="hover:bg-gray-100">
               <td class="py-2 px-4 border-b border-gray-200"></td>
               <td class="py-2 px-4 border-b border-gray-200"></td>
               <td class="py-2 px-4 border-b border-gray-200"></td>
