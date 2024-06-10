@@ -4,7 +4,9 @@ import LoginPage from '../views/LoginPage.vue';
 import Dashboard from '../views/DashboardPage.vue';
 import DoctorPage from '../views/DoctorPage.vue'; // Import DoctorPage
 import PatientPage from '../views/PatientPage.vue'; // Import PatientPage
-
+import DoctorProfile from '../views/doctor/DoctorProfile.vue';
+import DoctorManagement from '../views/doctor/DoctorManagement.vue';
+import DoctorAppointment from '../views/doctor/DoctorAppointment.vue';
 import store from '../vuex/store';
 
 const routes = [
@@ -13,6 +15,9 @@ const routes = [
     { path: '/dashboard', name: 'dashboardPage', component: Dashboard, meta: { requiresAuth: true } },
     { path: '/doctor', name: 'doctorPage', component: DoctorPage, meta: { requiresAuth: true } }, // Add DoctorPage route
     { path: '/patient', name: 'patientPage', component: PatientPage, meta: { requiresAuth: true } }, // Add PatientPage route
+    { path: '/doctor-profile', name: 'doctorProfile', component: DoctorProfile, meta: { requiresAuth: true } },
+    { path: '/doctor-management', name: 'doctorManagement', component: DoctorManagement, meta: { requiresAuth: true } },
+    { path: '/doctor-appointment', name: 'doctorAppointment', component: DoctorAppointment, meta: { requiresAuth: true } },
 ];
 
 const router = createRouter({
