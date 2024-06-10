@@ -1,16 +1,12 @@
 <template>
-    <nav class="bg-white p-4 shadow-md">
+    <div>
         <div class="container mx-auto flex justify-end items-center">
             <div>
-                <router-link v-if="!userLoggedIn" to="/"
-                    class="text-black mx-2 font-semibold transition duration-300 hover:text-red-500">Register</router-link>
-                <router-link v-if="!userLoggedIn" to="/login"
-                    class="text-black mx-2 font-semibold transition duration-300 hover:text-red-500">Login</router-link>
-                <button v-else @click="logout"
+                <button v-if="userLoggedIn" @click="logout"
                     class="text-black mx-2 font-semibold transition duration-300 hover:text-red-500">Logout</button>
             </div>
         </div>
-    </nav>
+    </div>
 </template>
 
 <script>
@@ -24,10 +20,8 @@ export default {
     methods: {
         async logout() {
             try {
-                this.$store.dispatch('logout', this.$toast)
-                    .then(() => {
-                        this.$router.push('/login');
-                    });
+                await this.$store.dispatch('logout', this.$toast);
+                this.$router.push('/login');
             } catch (error) {
                 console.error('Logout error:', error.error);
             }
@@ -35,3 +29,7 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+/* Add any scoped styles if needed */
+</style>
