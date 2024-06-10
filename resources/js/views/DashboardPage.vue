@@ -3,10 +3,10 @@
         <nav class="bg-black text-white w-64 flex flex-col justify-center items-center">
             <ul class="space-y-4 text-center">
                 <li>
-                    <router-link to="/doctor" class="block text-xl text-white transition duration-300 hover:text-red-500">Doctor</router-link>
+                    <router-link to="/doctor" class="block text-xl text-white transition duration-300 hover:text-red-500">Doctor Management</router-link>
                 </li>
                 <li>
-                    <router-link to="/patient" class="block text-xl text-white transition duration-300 hover:text-red-500">Patient</router-link>
+                    <router-link to="/patient" class="block text-xl text-white transition duration-300 hover:text-red-500">Patient Management</router-link>
                 </li>
                 <li>
                     <router-link to="/appointment" class="block text-xl text-white transition duration-300 hover:text-red-500">Appointment</router-link>
@@ -14,8 +14,11 @@
                 <li>
                     <router-link to="/medical-records" class="block text-xl text-white transition duration-300 hover:text-red-500">Medical Records</router-link>
                 </li>
+                <li>
+                    <router-link to="/profile" class="block text-xl text-white transition duration-300 hover:text-red-500">Profile</router-link>
+                </li>
                 <li v-if="userLoggedIn">
-                    <button @click="logout" class="block text-xl text-white transition duration-300 hover:text-red-500 w-full text-left">Logout</button>
+                    <button @click="logout" class="block text-xl text-white transition duration-300 hover:text-red-500 w-full">Logout</button>
                 </li>
             </ul>
         </nav>
@@ -48,9 +51,14 @@ export default {
 </script>
 
 <style>
-/* Adjust the font size and alignment */
+/* Adjust the font size */
 .text-xl {
     font-size: 1.25rem; /* Adjust as needed */
+}
+
+/* Center the text in the button */
+nav button {
+    text-align: center;
 }
 
 /* Additional styling if needed */
